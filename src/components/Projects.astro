@@ -1,39 +1,107 @@
 ---
 import GitHub from "./icons/GitHub.astro"
-import NextJS from "./icons/NextJS.astro"
-import Tailwind from "./icons/Tailwind.astro"
 import Link from "./icons/Link.astro"
 import LinkButton from "./LinkButton.astro"
+import Java from "./icons/Java.astro"
+import SQlite from "./icons/SQlite.astro"
+import Node from "./icons/Node.astro"
+import Sequelize from "./icons/Sequelize.astro"
+import Express from "./icons/Express.astro"
+import Javascript from "./icons/Javascript.astro"
+import Html from "./icons/Html.astro"
+import Css from "./icons/Css.astro"
+import Postgresql from "./icons/Postgresql.astro"
+import Python from "./icons/Python.astro"
+import Django from "./icons/Django.astro"
+import Pandas from "./icons/Pandas.astro"
 
 const TAGS = {
-  NEXT: {
-    name: "Next.js",
-    class: "bg-black text-white",
-    icon: NextJS,
+  SQlite: {
+    name: "SQLite",
+    icon: SQlite,
   },
-  TAILWIND: {
-    name: "Tailwind CSS",
-    class: "bg-[#003159] text-white",
-    icon: Tailwind,
+  JAVA :{
+    name: "Java",
+    icon: Java,
   },
+  NODE: {
+    name: "Node.js",
+    icon: Node,
+  },
+  EXPRESS: {
+    name: "Express.js",
+    icon: Express,
+  },
+  CSS: {
+    name: "CSS",
+    icon: Css,
+  },
+  HTML: {
+    name: "HTML",
+    icon: Html,
+  },
+  PYTHON: {
+    name: "Python",
+    icon: Python,
+  },
+  PANDAS : {
+    name: "Pandas",
+    icon: Pandas,
+  },
+  DJANGO: {
+    name: "Django",
+    icon: Django,
+  },
+  POSTGRESQL: {
+    name: "Postgresql",
+    icon: Postgresql,
+  },
+  JAVASCRIPT: {
+    name: "JavaScript",
+    icon: Javascript,
+  },
+  SEQUELIZE: {
+    name: "Sequelize",
+    icon: Sequelize
+  }
+
 }
 const PROJECTS = [
   {
-    title: "SVGL - A beautiful library with SVG logos",
+    title: "AsproDesktop",
     description:
-      "Biblioteca de logos SVG de las marcas más populares. +10k visitas al mes. +2K svgs descargados. Creado desde cero con Next.js, React y Tailwind CSS.",
-    link: "https://svgl.vercel.app/",
-    github: "https://github.com/pheralb/svgl",
-    image: "/projects/svgl.webp",
-    tags: [TAGS.NEXT, TAGS.TAILWIND],
+      "Aplicación desktop compilada con jlink y desarrollada con JavaFX para la gestión documental de vehículos de transporte público",
+    image: "/projects/aspro-desktop.png",
+    tags: [TAGS.SQlite, TAGS.JAVA],
+    github: null
   },
   {
-    title: "AdventJS - Retos de programación con JavaScript y TypeScript",
+    title: "Django BI",
+    description: 
+      "Proyecto de análisis de datos con Pandas, más entrenamiento de un modelo SVR de ScikitLearn".concat(
+      "; exposición HTTP con Django Rest Framework JQuery y Ajax",
+      ),
+    github: "https://github.com/Sauloopez/BI",
+    image: "/projects/bi-project.png",
+    tags: [TAGS.SQlite, TAGS.PYTHON, TAGS.PANDAS, TAGS.DJANGO, TAGS.JAVASCRIPT]
+  },
+  {
+    title: "Bienestar Digital Unimeta",
     description:
-      "Plataforma gratuita con retos de programación. Más de 1 millón de visitas en un mes. +50K retos completados. Creada desde cero con Next.js, React y Tailwind CSS.",
-    link: "https://adventjs.dev",
-    image: "/projects/adventjs.webp",
-    tags: [TAGS.NEXT, TAGS.TAILWIND],
+      "Realizado en Django, permite recopilar las asistencias de los estudiantes que participan".concat(
+      " en las actividades de Bienestar Institucional de la Corporación Universitaria del Meta,",
+      " permitiendo también la descarga de una hoja de cálculo con la información recopilada desde el AdminSite de Django."
+      ),
+    image: "/projects/bienestar-digital.png",
+    tags: [TAGS.POSTGRESQL, TAGS.PYTHON, TAGS.PANDAS, TAGS.JAVASCRIPT, ]
+  },
+  {
+    title: "Asprovespulmeta - Web Page",
+    description:
+      "Página web de la Asociación de Propietarios de Vehículos de Transporte Público del Meta S.A.",
+    link: "https://asprovespulmeta.co",
+    image: "/projects/aspro-web-page.png",
+    tags: [TAGS.POSTGRESQL, TAGS.NODE, TAGS.SEQUELIZE, TAGS.EXPRESS, TAGS.HTML, TAGS.CSS, TAGS.JAVASCRIPT],
   },
 ]
 ---
@@ -53,13 +121,13 @@ const PROJECTS = [
       {title}
     </h3>
     <div class="flex flex-wrap mt-2">
-      <ul class="flex flex-row mb-2 gap-x-2">
+      <ul class="flex flex-wrap w-full mb-2 gap-2 justify-start">
           {tags.map((tag) => (
-            <li>
+            <li class="flex flex-shrink-0 w-1/4">
               <span
-                class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
+                class={`flex w-full m-1 justify-center gap-x-2 rounded-full text-xs bg-black text-white py-1 px-2 `}
               >
-                <tag.icon class="size-4" />
+                <tag.icon class="size-5" />
                 {tag.name}
               </span>
             </li>
